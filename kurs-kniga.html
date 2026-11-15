@@ -4,150 +4,115 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Книга руководителя за 30 дней — авторский курс Андрея Чунакова</title>
-<meta name="description" content="Методика написания книги по менеджменту или маркетингу за 30 дней: от идеи до готовой рукописи, с обратной связью автора.">
 <style>
-  /* === NAVBAR === */
-  .topnav { background:#0b1c30; padding:14px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
-  .topnav .brand { color:#fff; font-family:Georgia,serif; font-size:17px; font-weight:bold; text-decoration:none; }
-  .topnav .brand span { color:#c9a227; }
-  .topnav .links { display:flex; flex-wrap:wrap; gap:6px; }
-  .topnav a.navlink { color:#d6e0ec; text-decoration:none; font-size:15px; padding:8px 14px; border-radius:6px; }
-  .topnav a.navlink:hover { background:#1c3a5e; color:#fff; }
-  .topnav a.navlink.active { background:#c9a227; color:#10243e; font-weight:bold; }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Arial, Helvetica, sans-serif; background:#f4f6f9; color:#1c2b3a; }
-  h1,h2,h3 { font-family: Georgia, "Times New Roman", serif; color:#10243e; }
-  header { background:linear-gradient(135deg,#10243e 0%,#1c3a5e 100%); color:#fff; padding:64px 20px 56px; text-align:center; border-bottom:4px solid #c9a227; }
-  header h1 { color:#fff; font-size:32px; margin-bottom:14px; }
-  header p { font-size:17px; opacity:.88; max-width:760px; margin:0 auto 30px; line-height:1.6; }
-  .btn { display:inline-block; padding:14px 28px; border-radius:6px; font-weight:bold; text-decoration:none; font-size:16px; cursor:pointer; margin:4px; }
-  .btn-gold { background:#c9a227; color:#10243e; }
-  .btn-blue { background:#1c3a5e; color:#fff; }
-  .btn-blue:hover { background:#10243e; }
-  .note { font-size:13px; color:#a8bad0; margin-top:10px; }
-  section { max-width:1040px; margin:0 auto; padding:52px 20px; }
-  section h2 { font-size:26px; margin-bottom:8px; }
-  .section-line { width:64px; height:4px; background:#c9a227; border:none; margin:14px 0 24px; }
-  .lead { font-size:16px; color:#44566b; line-height:1.75; max-width:860px; margin-bottom:12px; }
-  ul.checks { list-style:none; margin-top:14px; }
-  ul.checks li { padding:9px 0 9px 34px; position:relative; line-height:1.6; font-size:16px; }
-  ul.checks li::before { content:"—"; position:absolute; left:0; color:#c9a227; font-weight:bold; }
-  .cards { display:flex; gap:20px; flex-wrap:wrap; margin-top:24px; }
-  .card { background:#fff; border:1px solid #dde3ea; border-top:5px solid #c9a227; border-radius:10px; padding:26px 24px; flex:1 1 280px; box-shadow:0 4px 14px rgba(16,36,62,.07); }
-  .card h3 { font-size:18px; margin-bottom:12px; }
-  .card p { font-size:15px; color:#44566b; line-height:1.7; }
-  .price-box { background:#fff; border:1px solid #dde3ea; border-top:5px solid #c9a227; border-radius:10px; padding:30px; max-width:640px; margin-top:24px; box-shadow:0 4px 14px rgba(16,36,62,.07); }
-  .price-box .price { font-family:Georgia,serif; font-size:34px; color:#10243e; font-weight:bold; margin:8px 0 14px; }
-  .price-box p { font-size:15px; color:#44566b; line-height:1.7; margin-bottom:10px; }
-  footer { background:#10243e; color:#8fa3ba; text-align:center; padding:28px 20px; font-size:13px; line-height:1.7; margin-top:40px; }
-  footer a { color:#c9a227; text-decoration:none; }
-  .disclaimer { font-size:12px; color:#6d8098; margin-top:10px; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;background:#f5f1e8;color:#1a2340;line-height:1.65}
+.nav{background:#141c33;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.nav .logo{color:#c9a227;font-weight:bold;font-size:17px;text-decoration:none;letter-spacing:.3px}
+.nav .links{display:flex;gap:22px;flex-wrap:wrap}
+.nav .links a{color:#e8e4d8;text-decoration:none;font-size:15px;padding:6px 2px;border-bottom:2px solid transparent}
+.nav .links a:hover{color:#c9a227}
+.nav .links a.active{color:#c9a227;border-bottom:2px solid #c9a227}
+.hero{background:#1a2340;color:#f5f1e8;padding:72px 24px;text-align:center}
+.hero .kicker{color:#c9a227;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif}
+.hero h1{font-size:34px;margin:14px auto 18px;max-width:840px}
+.hero p{font-size:18px;max-width:720px;margin:0 auto 30px;color:#d8d4c8}
+.btn{display:inline-block;background:#c9a227;color:#141c33;font-family:Arial,sans-serif;font-weight:bold;padding:14px 34px;border-radius:4px;text-decoration:none;font-size:16px}
+.btn:hover{background:#dcb43a}
+.btn.outline{background:transparent;color:#c9a227;border:1.5px solid #c9a227}
+.btn.outline:hover{background:#c9a227;color:#141c33}
+section{padding:56px 24px;max-width:900px;margin:0 auto}
+section h2{font-size:27px;margin-bottom:22px;color:#1a2340}
+section h3{font-size:20px;margin:26px 0 10px;color:#1a2340}
+section p{margin-bottom:14px}
+.card{background:#fff;border:1px solid #e0d9c8;border-radius:6px;padding:26px;margin:18px 0}
+.gold{color:#a07f14;font-weight:bold}
+.list{margin:0 0 16px 22px}
+.list li{margin-bottom:8px}
+.dark{background:#1a2340;color:#f5f1e8;text-align:center;border-radius:6px}
+.dark h2,.dark h3{color:#f5f1e8}
+.dark p{color:#d8d4c8}
+.week{border-left:3px solid #c9a227;padding:6px 0 6px 18px;margin:16px 0}
+footer{background:#141c33;color:#b8b2a2;text-align:center;padding:26px 24px;font-size:14px;font-family:Arial,sans-serif}
+footer a{color:#c9a227;text-decoration:none}
+.note{font-size:13px;color:#8a8474;font-family:Arial,sans-serif}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:#fff}
+th,td{border:1px solid #e0d9c8;padding:10px 14px;text-align:left;font-size:15px}
+th{background:#1a2340;color:#f5f1e8;font-family:Arial,sans-serif}
+.result{max-width:640px;margin:26px auto 0;padding:24px;border-radius:6px;display:none;text-align:left}
+.result.ok{display:block;background:#eaf7ea;border:1.5px solid #3f9d4f}
+.result.bad{display:block;background:#fbeaea;border:1.5px solid #c0504d}
+.result h3{margin-top:0}
+.search{max-width:520px;margin:0 auto;display:flex;gap:10px}
+.search input{flex:1;padding:13px 16px;border:1.5px solid #c9a227;border-radius:4px;font-size:16px;font-family:Arial,sans-serif}
+.search button{background:#c9a227;color:#141c33;border:none;font-weight:bold;padding:13px 26px;border-radius:4px;cursor:pointer;font-size:16px;font-family:Arial,sans-serif}
 </style>
 </head>
 <body>
-
-<nav class="topnav">
-  <a class="brand" href="index.html">ЦПК <span>«Финансы и экономика»</span></a>
-  <div class="links">
-      <a class="navlink" href="index.html">Главная</a>
-      <a class="navlink active" href="kurs-kniga.html">Курс «Книга руководителя»</a>
-      <a class="navlink" target="_blank" rel="noopener" href="https://verify.iiefinstitute.org">Проверить сертификат</a>
-  </div>
-</nav>
-
-<header>
-  <h1>Ваша книга по менеджменту или маркетингу — за 30 дней</h1>
-  <p>Авторская методика Андрея Чунакова: за месяц вы проходите путь от идеи и плана до готовой рукописи, с которой можно идти в издательство или на маркетплейсы самиздата. 36 лет в продажах, 19 — в управлении, четыре изданные книги.</p>
-  <a class="btn btn-gold" href="mailto:instituteiief@gmail.com?subject=Книга%20руководителя%20—%20заявка">Занять место в потоке</a>
-  <div class="note">Группа ограничена — формат с личной обратной связью.</div>
-</header>
+<nav class="nav"><a class="logo" href="index.html">ЦПК «Финансы и экономика»</a><div class="links"><a href="index.html">Главная</a><a href="kurs-kniga.html" class="active">Курс «Книга руководителя»</a><a href="verify.html" target="_blank">Проверить сертификат</a></div></nav>
+<div class="hero">
+<p class="kicker">Авторский курс Андрея Чунакова</p>
+<h1>Ваша книга по менеджменту или маркетингу — за 30 дней</h1>
+<p>Авторская методика: за месяц вы проходите путь от идеи и плана до готовой рукописи, с которой можно идти в издательство или на маркетплейсы самиздата. 36 лет в продажах, 19 — в управлении, четыре изданные книги.</p>
+<a class="btn" href="mailto:instituteiief@gmail.com?subject=Заявка на курс Книга руководителя за 30 дней">Занять место в потоке</a>
+<p class="note" style="color:#d8d4c8;margin-top:14px">Группа ограничена — формат с личной обратной связью.</p>
+</div>
 
 <section>
-  <h2>Почему у руководителя должна быть книга</h2>
-  <hr class="section-line">
-  <p class="lead">Вы знаете то, чему учились годами — на своих ошибках и результатах. Эта стоимость не видна в должности и не отражена в резюме. Книга делает её видимой: для партнёров, клиентов, подчинённых и рынка труда.</p>
-  <p class="lead">Руководитель с книгой — это статус эксперта, который работает годами: книга продаёт вас на встречах, куда вы ещё не дошли, и говорит за вас там, где вас пока не знают.</p>
+<h2>Почему у руководителя должна быть книга</h2>
+<p>Вы знаете то, чему учились годами — на своих ошибках и результатах. Эта стоимость не видна в должности и не отражена в резюме. Книга делает её видимой: для партнёров, клиентов, подчинённых и рынка труда.</p>
+<p>Руководитель с книгой — это статус эксперта, который работает годами: книга продаёт вас на встречах, куда вы ещё не дошли, и говорит за вас там, где вас пока не знают.</p>
 </section>
 
 <section>
-  <h2>Чему мешают два мифа</h2>
-  <hr class="section-line">
-  <div class="cards">
-    <div class="card">
-      <h3>«Нужно много времени»</h3>
-      <p>Нет. Нужен метод. Методика курса построена так, чтобы писать по 60–90 минут в день — в любое свободное окно, без «когда появится время».</p>
-    </div>
-    <div class="card">
-      <h3>«Я не писатель»</h3>
-      <p>Не нужно быть писателем. Книга руководителя — это не художественная проза, а систематизированный опыт: кейсы, принципы, решения. Вы это знаете — курс даёт структуру, чтобы это записать.</p>
-    </div>
-  </div>
+<h2>Чему мешают два мифа</h2>
+<h3>«Нужно много времени»</h3>
+<p>Нет. Нужен метод. Методика курса построена так, чтобы писать по 60–90 минут в день — в любое свободное окно, без «когда появится время».</p>
+<h3>«Я не писатель»</h3>
+<p>Не нужно быть писателем. Книга руководителя — это не художественная проза, а систематизированный опыт: кейсы, принципы, решения. Вы это знаете — курс даёт структуру, чтобы это записать.</p>
 </section>
 
 <section>
-  <h2>Как устроены 30 дней</h2>
-  <hr class="section-line">
-  <div class="cards">
-    <div class="card">
-      <h3>Неделя 1 — фундамент</h3>
-      <p>Находим сильную идею книги и вашу целевую аудиторию, собираем концепцию и оглавление. К концу недели у вас — план книги, с которым вы не заблудитесь в дальнейшем тексте.</p>
-    </div>
-    <div class="card">
-      <h3>Недели 2–3 — написание</h3>
-      <p>Работаем по методике «от главы к главе»: ежедневный режим письма, разбор структуры главы, приёмы перевода опыта в текст, работа с кейсами из вашей практики. К концу третьей недели — черновик.</p>
-    </div>
-    <div class="card">
-      <h3>Неделя 4 — доводка</h3>
-      <p>Редактура, стиль, название, концепция обложки, структура анонса. Разбираем пути публикации: классические издательства и самиздат на маркетплейсах — с позиции автора-практика, который через это прошёл.</p>
-    </div>
-  </div>
+<h2>Как устроены 30 дней</h2>
+<div class="week"><h3>Неделя 1 — фундамент</h3><p>Находим сильную идею книги и вашу целевую аудиторию, собираем концепцию и оглавление. К концу недели у вас — план книги, с которым вы не заблудитесь в дальнейшем тексте.</p></div>
+<div class="week"><h3>Недели 2–3 — написание</h3><p>Работаем по методике «от главы к главе»: ежедневный режим письма, разбор структуры главы, приёмы перевода опыта в текст, работа с кейсами из вашей практики. К концу третьей недели — черновик.</p></div>
+<div class="week"><h3>Неделя 4 — доводка</h3><p>Редактура, стиль, название, концепция обложки, структура анонса. Разбираем пути публикации: классические издательства и самиздат на маркетплейсах — с позиции автора-практика, который через это прошёл.</p></div>
 </section>
 
 <section>
-  <h2>Что входит в курс</h2>
-  <hr class="section-line">
-  <ul class="checks">
-    <li>Ежедневная программа с заданиями и чек-листами;</li>
-    <li>Разборы текстов участников: каждый автор получает обратную связь по главам;</li>
-    <li>Личные консультации с Андреем Чунаковым (формат и количество — по тарифу);</li>
-    <li>Шаблоны: концепция книги, план главы, анкета для издательства, описание для маркетплейса;</li>
-    <li>Рабочая группа курса: обмен опытом с руководителями, которые пишут параллельно с вами.</li>
-  </ul>
+<h2>Что входит в курс</h2>
+<ul class="list">
+<li>Ежедневная программа с заданиями и чек-листами;</li>
+<li>Разборы текстов участников: каждый автор получает обратную связь по главам;</li>
+<li>Личные консультации с Андреем Чунаковым (формат и количество — по тарифу);</li>
+<li>Шаблоны: концепция книги, план главы, анкета для издательства, описание для маркетплейса;</li>
+<li>Рабочая группа курса: обмен опытом с руководителями, которые пишут параллельно с вами.</li>
+</ul>
 </section>
 
 <section>
-  <h2>Для кого курс</h2>
-  <hr class="section-line">
-  <ul class="checks">
-    <li>Руководители и владельцы бизнеса, которым нужен статус эксперта в своей отрасли;</li>
-    <li>Консультанты и спикеры, у которых опыт есть, а книги — ещё нет;</li>
-    <li>Специалисты, планирующие переход в экспертную позицию: преподавание, консалтинг, личный бренд.</li>
-  </ul>
+<h2>Для кого курс</h2>
+<ul class="list">
+<li>Руководители и владельцы бизнеса, которым нужен статус эксперта в своей отрасли;</li>
+<li>Консультанты и спикеры, у которых опыт есть, а книги — ещё нет;</li>
+<li>Специалисты, планирующие переход в экспертную позицию: преподавание, консалтинг, личный бренд.</li>
+</ul>
 </section>
 
 <section>
-  <h2>Автор курса — Андрей Чунаков</h2>
-  <hr class="section-line">
-  <p class="lead">36 лет в продажах, из них 19 в управлении: от регионального представителя Storck и ZOTT до генерального директора филиала инструментального холдинга (16 000 артикулов, 100 человек в подчинении). Автор книг по организации бизнеса на маркетплейсах, подбору персонала, деловому этикету и психологии общения. С 2018 года — консультант по организации и стимулированию продаж.</p>
+<h2>Автор курса — Андрей Чунаков</h2>
+<p>36 лет в продажах, из них 19 в управлении: от регионального представителя Storck и ZOTT до генерального директора филиала инструментального холдинга (16 000 артикулов, 100 человек в подчинении). Автор книг по организации бизнеса на маркетплейсах, подбору персонала, деловому этикету и психологии общения. С 2018 года — консультант по организации и стимулированию продаж.</p>
 </section>
 
-<section>
-  <h2>Формат и стоимость</h2>
-  <hr class="section-line">
-  <div class="price-box">
-    <p><strong>Формат:</strong> онлайн, живая группа.</p>
-    <div class="price">29 900 ₽</div>
-    <p>В стоимость входят все материалы, обратная связь по текстам и консультации автора методики.</p>
-    <p><strong>Гарантия честности:</strong> курс даёт методику и сопровождение — рукопись зависит от вашей работы. Если вы проходите программу по расписанию и выполняете задания, к 30-му дню у вас есть черновик книги. Именно это обещание курса — метод, а не магия.</p>
-    <p style="text-align:center; margin-top:16px;"><a class="btn btn-blue" href="mailto:instituteiief@gmail.com?subject=Книга%20руководителя%20—%20заявка">Занять место в потоке</a></p>
-  </div>
+<section class="dark">
+<h2>Формат и стоимость</h2>
+<p>Формат: онлайн, живая группа.</p>
+<p style="font-size:34px;color:#c9a227;font-weight:bold">29 900 ₽</p>
+<p>В стоимость входят все материалы, обратная связь по текстам и консультации автора методики.</p>
+<p>Гарантия честности: курс даёт методику и сопровождение — рукопись зависит от вашей работы. Если вы проходите программу по расписанию и выполняете задания, к 30-му дню у вас есть черновик книги. Именно это обещание курса — метод, а не магия.</p>
+<a class="btn" href="mailto:instituteiief@gmail.com?subject=Заявка на курс Книга руководителя за 30 дней">Занять место в потоке</a>
 </section>
 
-<footer>
-  ЦПК «Финансы и экономика» · iiefinstitute.org · Проверка сертификатов: <a href="https://verify.iiefinstitute.org" target="_blank" rel="noopener">verify.iiefinstitute.org</a>
-  <div class="disclaimer">Сертификат участника не является документом об образовании.</div>
-</footer>
-
+<footer><p><a href="index.html">ЦПК «Финансы и экономика»</a> · iiefinstitute.org · <a href="verify.html">Проверка сертификатов</a></p><p>Сертификат участника не является документом об образовании.</p></footer>
 </body>
 </html>
