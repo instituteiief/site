@@ -1,140 +1,140 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Центр профессиональных квалификаций «Финансы и экономика» — программы для руководителей</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,'Times New Roman',serif;background:#f5f1e8;color:#1a2340;line-height:1.65}
-.nav{background:#141c33;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.nav .logo{color:#c9a227;font-weight:bold;font-size:17px;text-decoration:none;letter-spacing:.3px}
-.nav .links{display:flex;gap:22px;flex-wrap:wrap}
-.nav .links a{color:#e8e4d8;text-decoration:none;font-size:15px;padding:6px 2px;border-bottom:2px solid transparent}
-.nav .links a:hover{color:#c9a227}
-.nav .links a.active{color:#c9a227;border-bottom:2px solid #c9a227}
-.hero{background:#1a2340;color:#f5f1e8;padding:72px 24px;text-align:center}
-.hero .kicker{color:#c9a227;font-size:14px;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif}
-.hero h1{font-size:34px;margin:14px auto 18px;max-width:840px}
-.hero p{font-size:18px;max-width:720px;margin:0 auto 30px;color:#d8d4c8}
-.btn{display:inline-block;background:#c9a227;color:#141c33;font-family:Arial,sans-serif;font-weight:bold;padding:14px 34px;border-radius:4px;text-decoration:none;font-size:16px}
-.btn:hover{background:#dcb43a}
-.btn.outline{background:transparent;color:#c9a227;border:1.5px solid #c9a227}
-.btn.outline:hover{background:#c9a227;color:#141c33}
-section{padding:56px 24px;max-width:900px;margin:0 auto}
-section h2{font-size:27px;margin-bottom:22px;color:#1a2340}
-section h3{font-size:20px;margin:26px 0 10px;color:#1a2340}
-section p{margin-bottom:14px}
-.card{background:#fff;border:1px solid #e0d9c8;border-radius:6px;padding:26px;margin:18px 0}
-.gold{color:#a07f14;font-weight:bold}
-.list{margin:0 0 16px 22px}
-.list li{margin-bottom:8px}
-.dark{background:#1a2340;color:#f5f1e8;text-align:center;border-radius:6px}
-.dark h2,.dark h3{color:#f5f1e8}
-.dark p{color:#d8d4c8}
-.week{border-left:3px solid #c9a227;padding:6px 0 6px 18px;margin:16px 0}
-footer{background:#141c33;color:#b8b2a2;text-align:center;padding:26px 24px;font-size:14px;font-family:Arial,sans-serif}
-footer a{color:#c9a227;text-decoration:none}
-.note{font-size:13px;color:#8a8474;font-family:Arial,sans-serif}
-table{width:100%;border-collapse:collapse;margin:16px 0;background:#fff}
-th,td{border:1px solid #e0d9c8;padding:10px 14px;text-align:left;font-size:15px}
-th{background:#1a2340;color:#f5f1e8;font-family:Arial,sans-serif}
-.result{max-width:640px;margin:26px auto 0;padding:24px;border-radius:6px;display:none;text-align:left}
-.result.ok{display:block;background:#eaf7ea;border:1.5px solid #3f9d4f}
-.result.bad{display:block;background:#fbeaea;border:1.5px solid #c0504d}
-.result h3{margin-top:0}
-.search{max-width:520px;margin:0 auto;display:flex;gap:10px}
-.search input{flex:1;padding:13px 16px;border:1.5px solid #c9a227;border-radius:4px;font-size:16px;font-family:Arial,sans-serif}
-.search button{background:#c9a227;color:#141c33;border:none;font-weight:bold;padding:13px 26px;border-radius:4px;cursor:pointer;font-size:16px;font-family:Arial,sans-serif}
-
-.gerb{width:38px;height:38px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:10px}
+:root{--navy:#1a2340;--navy2:#141c33;--cream:#f5f1e8;--gold:#c9a227;--ink:#222;--muted:#6b6b66;--line:#e6dfd0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header.site{background:var(--navy);color:#fff}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--gold);font-weight:700;letter-spacing:.4px;font-size:17px;text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:transparent}
+nav ul{list-style:none;display:flex;gap:22px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-size:15px;padding-bottom:3px;border-bottom:2px solid transparent}
+nav a:hover{color:var(--gold)}
+nav a.active{color:var(--gold);border-color:var(--gold)}
+.hero{background:var(--navy2);color:#fff;text-align:center;padding:70px 24px}
+.hero .kicker{color:var(--gold);letter-spacing:2px;font-size:14px;text-transform:uppercase}
+.hero h1{font-size:38px;margin:18px auto;max-width:840px;line-height:1.25}
+.hero p{max-width:660px;margin:0 auto 26px;color:#d9d9d2;font-size:17px}
+.hero .sub{margin-top:16px;color:#bdbdb6;font-size:15px}
+.btn{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;padding:14px 32px;border-radius:4px;text-decoration:none;border:none;font-size:16px;cursor:pointer;font-family:inherit}
+.btn:hover{filter:brightness(1.07)}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+section{padding:60px 0}
+section.alt{background:#fff}
+h2{font-size:29px;color:var(--navy);margin-bottom:18px}
+h3{font-size:19px;color:var(--navy);margin-bottom:10px}
+.lead{font-size:17px;color:#444;max-width:760px}
+.grid{display:grid;gap:22px}
+.grid.c2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid.c3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.c4{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:#fff;border:1px solid var(--line);padding:26px;border-radius:4px}
+.card h3{margin-top:0}
+.card p{font-size:15px;color:#444}
+.badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:3px;text-transform:uppercase;margin-bottom:12px}
+.badge.grey{background:#e8e2d2;color:var(--navy)}
+.price{font-size:27px;font-weight:800;color:var(--navy);margin:12px 0 14px}
+.price .small{font-size:14px;font-weight:400;color:var(--muted)}
+ul.check{list-style:none}
+ul.check li{padding-left:26px;position:relative;margin-bottom:10px;font-size:15px}
+ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:700}
+ul.plain{padding-left:20px}
+ul.plain li{margin-bottom:8px;font-size:15px}
+.note{font-size:14px;color:var(--muted);margin-top:12px}
+.stripe{background:var(--navy2);color:var(--gold);text-align:center;padding:16px;font-style:italic;font-size:15px}
+.steps{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 58px;font-size:15px}
+.steps li:before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps b{color:var(--navy)}
+details{background:#fff;border:1px solid var(--line);padding:16px 20px;margin-bottom:10px;border-radius:4px}
+details summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.stat{text-align:center}
+.stat .num{font-size:32px;font-weight:800;color:var(--navy)}
+.stat p{font-size:14px;color:#555;margin-top:6px}
+.center{text-align:center}
+.cta{padding:60px 0;text-align:center}
+.cta h2{margin-bottom:12px}
+footer.site{background:var(--navy);color:#cfcfc8;padding:26px 0;text-align:center;font-size:14px}
+footer.site a{color:var(--gold);text-decoration:none;margin:0 8px;white-space:nowrap}
+footer.site .disc{margin-top:10px;font-size:12.5px;color:#9a9a92}
+.verify-box{max-width:560px;margin:0 auto}
+.verify-box input{width:100%;padding:14px 16px;font-size:17px;font-family:inherit;border:1px solid var(--line);border-radius:4px;margin-bottom:14px}
 </style>
 </head>
 <body>
-<nav class="nav"><a class="logo" href="index.html"><img class="gerb" src="gerb.png" alt="Герб ЦПК ФЭ" onerror="this.remove()">ЦПК «Финансы и экономика»</a><div class="links"><a href="index.html" class="active">Главная</a><a href="kurs-kniga.html">Курс «Книга руководителя»</a><a href="biznes-bez-diploma.html">Бизнес без диплома</a><a href="shop.html">Витрина</a><a href="verify.html" target="_blank">Проверить сертификат</a></div></nav>
-<div class="hero">
-<p class="kicker">Центр профессиональных квалификаций</p>
+<header class="site"><div class="wrap top">
+<a class="brand" href="index.html"><img src="gerb.png" alt="" onerror="this.style.display='none'"><span>ЦПК «Финансы и экономика»</span></a>
+<nav><ul><li><a href="index.html" class="active">Главная</a></li><li><a href="kurs-kniga.html" class="">Курс «Книга руководителя»</a></li><li><a href="biznes-bez-diploma.html" class="">Бизнес без диплома</a></li><li><a href="shop.html" class="">Витрина</a></li><li><a href="https://verify.iiefinstitute.org/" class="">Проверить сертификат</a></li></ul></nav>
+</div></header>
+
+<div class="hero"><div class="kicker">Центр профессиональных квалификаций</div>
 <h1>«Финансы и экономика»</h1>
 <p>Практические программы для руководителей и специалистов: персонал, продажи, логистика. Каждый выпускник получает сертификат участника с номером, который можно проверить онлайн за 10 секунд.</p>
-<a class="btn" href="#programs">Программы центра</a>
-<a class="btn outline" href="verify.html" target="_blank">Проверить сертификат</a>
+<a class="btn" href="#programs">Программы центра</a> <a class="btn ghost" href="https://verify.iiefinstitute.org/">Проверить сертификат</a>
 </div>
-
-<section>
+<section id="programs"><div class="wrap">
 <h2>Кому подходят программы центра</h2>
-<ul class="list">
-<li><strong>Руководителям</strong>, которые выросли из специалистов и управляют «по наитию»: дадим систему вместо интуиции.</li>
-<li><strong>Специалистам</strong>, которые хотят перейти в управление: продажи, склад, персонал — с нуля до позиции руководителя.</li>
-<li><strong>Собственникам малого бизнеса</strong>: практические решения для своего бизнеса, а не теория.</li>
-<li><strong>HR и тренинг-провайдерам</strong>: готовые программы аттестации и тестирования для сотрудников — по партнёрскому предложению.</li>
-</ul>
-</section>
-
-<section id="programs">
-<h2>Программы центра — три направления</h2>
-
-<h3>Персонал: от подбора до мотивации</h3>
-<ul class="list">
-<li>Управление персоналом</li>
-<li>Аттестация персонала</li>
-<li>Разработка систем мотивации</li>
-<li>Тестирование персонала и разработка тестов</li>
-</ul>
-
-<h3>Продажи: от полки до отдела</h3>
-<ul class="list">
-<li>Оптовые продажи</li>
-<li>Розничные продажи</li>
-<li>Управление сбытовым подразделением</li>
-</ul>
-
-<h3>Логистика: от коробки до маршрута</h3>
-<ul class="list">
-<li>Складская логистика</li>
-<li>Транспортная логистика</li>
-<li>Управление оптовым складом</li>
-</ul>
-
-<p>По завершении каждой программы выдаётся сертификат участника с регистрационным номером. Номер вносится в реестр центра и проверяется онлайн.</p>
-</section>
-
-<section class="dark">
-<h2>Сертификат, который можно проверить</h2>
-<p>На каждом сертификате — регистрационный номер и QR-код. Работодатель или партнёр сканирует код, попадает на страницу проверки и видит: номер, имя владельца, программу и статус документа. Проверка занимает меньше минуты и не требует регистрации.</p>
-<div class="card" style="background:#232d4d;border-color:#3a4568">
-<p><span class="gold">1.</span> Сканируете QR-код или вводите номер на странице проверки.</p>
-<p><span class="gold">2.</span> Система сверяет номер с реестром центра.</p>
-<p><span class="gold">3.</span> Видите статус и данные документа.</p>
+<div class="grid c2">
+<div class="card"><h3>Руководителям</h3><p>Которые выросли из специалистов и управляют «по наитию»: дадим систему вместо интуиции.</p></div>
+<div class="card"><h3>Специалистам</h3><p>Которые хотят перейти в управление: продажи, склад, персонал — с нуля до позиции руководителя.</p></div>
+<div class="card"><h3>Собственникам малого бизнеса</h3><p>Практические решения для своего бизнеса, а не теория.</p></div>
+<div class="card"><h3>HR и тренинг-провайдерам</h3><p>Готовые программы аттестации и тестирования для сотрудников — по партнёрскому предложению.</p></div>
 </div>
-<a class="btn" href="verify.html" target="_blank">Проверить сертификат</a>
-</section>
-
-<section>
+</div></section>
+<section class="alt"><div class="wrap">
+<h2>Программы центра — три направления</h2>
+<div class="grid c3">
+<div class="card"><h3>Персонал: от подбора до мотивации</h3><ul class="plain"><li>Управление персоналом</li><li>Аттестация персонала</li><li>Разработка систем мотивации</li><li>Тестирование персонала и разработка тестов</li></ul></div>
+<div class="card"><h3>Продажи: от полки до отдела</h3><ul class="plain"><li>Оптовые продажи</li><li>Розничные продажи</li><li>Управление сбытовым подразделением</li></ul></div>
+<div class="card"><h3>Логистика: от коробки до маршрута</h3><ul class="plain"><li>Складская логистика</li><li>Транспортная логистика</li><li>Управление оптовым складом</li></ul></div>
+</div>
+<p class="note">По завершении каждой программы выдаётся сертификат участника с регистрационным номером. Номер вносится в реестр центра и проверяется онлайн.</p>
+</div></section>
+<section><div class="wrap">
+<h2>Сертификат, который можно проверить</h2>
+<p class="lead">На каждом сертификате — регистрационный номер и QR-код. Работодатель или партнёр сканирует код, попадает на страницу проверки и видит: номер, имя владельца, программу и статус документа. Проверка занимает меньше минуты и не требует регистрации.</p>
+<ol class="steps" style="margin-top:24px;max-width:640px">
+<li>Сканируете QR-код или вводите номер на странице проверки.</li>
+<li>Система сверяет номер с реестром центра.</li>
+<li>Видите статус и данные документа.</li>
+</ol>
+<p style="margin-top:20px"><a class="btn dark" href="https://verify.iiefinstitute.org/">Проверить сертификат</a></p>
+</div></section>
+<section class="alt"><div class="wrap">
 <h2>Автор программ — Андрей Чунаков</h2>
-<p><strong>36 лет в продажах, из них 19 — в управлении продажами.</strong> Вся карьера — в реальном бизнесе: опт, розница, дистрибуция, работа с федеральными сетями.</p>
+<p>36 лет в продажах, из них 19 — в управлении продажами. Вся карьера — в реальном бизнесе: опт, розница, дистрибуция, работа с федеральными сетями.</p>
 <p>Начинал региональным представителем международных производителей — кондитерской и молочной продукции: строил сбытовую сеть Поволжья и Урала с нуля, выводил марки на первые места по продажам в торговых точках.</p>
 <p>С 1998 по 2002 годы — одна из крупнейших пивоваренных компаний страны: открытие первого удалённого филиала компании в Нижнем Новгороде с нуля. Под руководством Андрея — торговый отдел, склад 3600 м², автопарк; объёмы продаж филиала выросли более чем в семь раз.</p>
 <p>Следующие 11 лет — генеральный директор сбытового филиала производственно-сбытового холдинга (инструментальное направление): 16 000 артикулов, 100 сотрудников в подчинении, торгово-складской комплекс 10 000 м², собственный грузовой автопарк. Продажи филиала выросли более чем в сорок раз; филиал стал лидером своего направления в регионе.</p>
 <p>Затем — директор по продажам итальянского торгового дома, руководство оптовой компанией защитных покрытий, коммерческий директор розничной сети с интернет-магазином. С 2018 года — авторские проекты: книги и консультирование в сфере организации и стимулирования продаж и работы с персоналом.</p>
-<p><strong>Образование:</strong> Национальный исследовательский университет «Высшая школа экономики» (НИУ ВШЭ) — «Управление маркетингом на предприятии»; Московская академия менеджмента и бизнеса — «Менеджмент организации»; профильные программы по логистике и финансовому анализу торговых рынков.</p>
+<p>Образование: Национальный исследовательский университет «Высшая школа экономики» (НИУ ВШЭ) — «Управление маркетингом на предприятии»; Московская академия менеджмента и бизнеса — «Менеджмент организации»; профильные программы по логистике и финансовому анализу торговых рынков.</p>
 <p>Андрей Чунаков — автор книг по организации бизнеса на маркетплейсах, подбору персонала, психологии делового этикета и психологии общения в коллективе. Программы центра построены на реальных кейсах, а не на пересказе учебников.</p>
-<p style="border-left:3px solid #c9a227;padding:8px 0 8px 16px"><strong>Андрей Чунаков — Honorary Professor, International Institute of Economics and Finansial.</strong></p>
-</section>
-
-<section class="dark">
-<h2>Авторский курс Андрея Чунакова</h2>
-<h3>«Книга руководителя за 30 дней»</h3>
+<p><b>Андрей Чунаков — Honorary Professor, International Institute of Economics and Finansial.</b></p>
+</div></section>
+<section><div class="wrap grid c2">
+<div class="card"><div class="badge">Авторский курс Андрея Чунакова</div><h3>«Книга руководителя за 30 дней»</h3>
 <p>Методика, по которой руководитель проходит путь от идеи до готовой рукописи за месяц. Личная обратная связь. Группа ограничена.</p>
-<a class="btn" href="kurs-kniga.html">Подробнее о курсе</a>
-</section>
-
-<section class="dark">
-<h2>Новая программа центра</h2>
-<h3>«Бизнес без диплома»</h3>
+<p style="margin-top:16px"><a class="btn dark" href="kurs-kniga.html">Подробнее о курсе</a></p></div>
+<div class="card"><div class="badge">Новая программа центра</div><h3>«Бизнес без диплома»</h3>
 <p>Программа для тех, кто строит бизнес и продажи без профильного диплома: система вместо интуиции, реальные кейсы автора вместо пересказа учебников.</p>
-<a class="btn" href="biznes-bez-diploma.html">Подробнее о программе</a>
-</section>
+<p style="margin-top:16px"><a class="btn dark" href="biznes-bez-diploma.html">Подробнее о программе</a></p></div>
+</div></section>
 
-<footer><p><a href="index.html">ЦПК «Финансы и экономика»</a> · iiefinstitute.org · <a href="verify.html">Проверка сертификатов</a> · <a href="oferta.html">Оферта</a> · <a href="rekvizity.html">Реквизиты</a></p><p>Сертификат участника не является документом об образовании.</p></footer>
+<footer class="site"><div class="wrap">
+ЦПК «Финансы и экономика» · iiefinstitute.org ·
+<a href="verify.html">Проверка сертификатов</a> ·
+<a href="oferta.html">Оферта</a> ·
+<a href="rekvizity.html">Реквизиты</a>
+<div class="disc">Сертификат участника не является документом об образовании.</div>
+</div></footer>
 </body>
 </html>
