@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Служебная страница — загрузка сертификата (не публикуется в меню)</title>
+<style>
+  :root { --navy:#1b2a4a; --navy2:#24365e; --gold:#c9a45c; --cream:#faf6ee; --ink:#22293b; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background:var(--cream); color:var(--ink); line-height:1.65; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+  header { background:var(--navy); color:#fff; padding:18px 0; }
+  header .wrap { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .brand { font-size:20px; letter-spacing:.5px; }
+  .brand b { color:var(--gold); }
+  .tag { font-size:13px; color:#e8b84a; border:1px solid #e8b84a; padding:2px 10px; border-radius:12px; }
+  h1 { font-size:32px; color:var(--navy); margin-bottom:12px; }
+  .lead { font-size:17px; color:#4a5265; max-width:760px; }
+  .cols { display:flex; gap:28px; flex-wrap:wrap; margin-top:28px; align-items:flex-start; }
+  .col { flex:1 1 380px; }
+  .card { background:#fff; border:1px solid #e4dcc8; border-radius:10px; padding:26px; box-shadow:0 2px 10px rgba(27,42,74,.06); margin-bottom:22px; }
+  h2 { font-size:20px; color:var(--navy); margin-bottom:14px; }
+  label { display:block; font-size:13px; color:#5a6274; margin:12px 0 4px; text-transform:uppercase; letter-spacing:.5px; }
+  input[type=text], select, input[type=date] { width:100%; padding:10px 12px; font-size:16px; font-family:inherit; border:1px solid #cfc4a8; border-radius:8px; background:#fffdf8; }
+  input:focus, select:focus { outline:2px solid var(--gold); }
+  .btn { display:inline-block; background:var(--navy); color:#fff; border:none; font-family:inherit; font-size:16px; padding:12px 28px; border-radius:8px; cursor:pointer; margin-top:16px; letter-spacing:.4px; }
+  .btn:hover { background:var(--navy2); }
+  .btn.gold { background:var(--gold); color:#1b2a4a; font-weight:bold; }
+  .btn.gold:hover { background:#d8b672; }
+  .msg { margin-top:14px; padding:12px 16px; border-radius:8px; font-size:15px; display:none; }
+  .msg.ok { display:block; background:#f0f7ee; border:1px solid #b8d4ac; }
+  .msg.err { display:block; background:#fdf0ef; border:1px solid #e2b5b0; }
+  table.data { border-collapse:collapse; width:100%; font-size:14px; margin-top:8px; }
+  table.data th { background:var(--navy); color:#fff; padding:8px 10px; text-align:left; font-weight:normal; }
+  table.data td { padding:8px 10px; border-bottom:1px solid #eee4d0; }
+  .preview { background:#f4efdf; border:1px dashed #c9a45c; border-radius:8px; padding:16px; font-size:15px; margin-top:14px; }
+  pre.out { background:#1b2a4a; color:#d9e2f5; padding:16px; border-radius:8px; font-size:13px; overflow-x:auto; max-height:320px; overflow-y:auto; white-space:pre-wrap; }
+  ol.steps { margin:10px 0 0 20px; }
+  ol.steps li { margin-bottom:10px; }
+  .small { font-size:13px; color:#8a8f9c; margin-top:10px; }
+</style>
+<script src="registry.js"></script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand"><b>ЦПК</b> «Финансы и экономика»</div>
+      <span class="tag">Служебная страница — не для публики</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div style="padding:44px 0 0;">
+      <h1>Загрузка нового сертификата в реестр</h1>
+      <p class="lead">Заполните форму, нажмите «Подготовить запись» — страница соберёт готовый файл реестра. Затем три шага публикации (справа внизу). Сайт статический, поэтому публикация выполняется одним коммитом на GitHub — это занимает около минуты.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <div class="card">
+          <h2>Текущий реестр — <span id="count">0</span> записей</h2>
+          <div style="overflow-x:auto;">
+          <table class="data" id="regtable">
+            <tr><th>Номер</th><th>ФИО</th><th>Программа</th><th>Дата</th><th>Статус</th></tr>
+          </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <h2>Новый сертификат</h2>
+          <form onsubmit="return prepare()" autocomplete="off">
+            <label>Регистрационный номер</label>
+            <input type="text" id="f_num" placeholder="CA-2026-000001">
+            <label>ФИО владельца</label>
+            <input type="text" id="f_name" placeholder="Иванов Иван Иванович" required>
+            <label>Программа</label>
+            <select id="f_prog">
+              <option>Курс «Книга руководителя за 30 дней»</option>
+              <option>Бизнес без диплома (полный курс)</option>
+              <option>Бизнес без диплома (отдельный модуль)</option>
+              <option>Управление персоналом</option>
+              <option>Аттестация персонала</option>
+              <option>Разработка систем мотивации</option>
+              <option>Тестирование персонала</option>
+              <option>Оптовые продажи</option>
+              <option>Розничные продажи</option>
+              <option>Управление сбытовым подразделением</option>
+              <option>Складская логистика</option>
+              <option>Транспортная логистика</option>
+              <option>Управление оптовым складом</option>
+              <option value="other">Другая (вписать)</option>
+            </select>
+            <input type="text" id="f_prog_other" placeholder="Название программы вручную" style="display:none; margin-top:8px;">
+            <label>Дата выдачи</label>
+            <input type="date" id="f_date">
+            <label>Статус</label>
+            <select id="f_status">
+              <option>Действителен</option>
+              <option>Аннулирован</option>
+            </select>
+            <button class="btn" type="submit">Подготовить запись</button>
+            <div class="msg" id="msg"></div>
+          </form>
+          <div class="preview" id="preview" style="display:none;"></div>
+        </div>
+
+        <div class="card" id="outcard" style="display:none;">
+          <h2>Готовый файл registry.js</h2>
+          <pre class="out" id="out"></pre>
+          <button class="btn gold" onclick="copyOut()">Скопировать всё</button>
+          <button class="btn" onclick="downloadOut()">Скачать registry.js</button>
+          <div class="msg" id="copymsg"></div>
+        </div>
+
+        <div class="card">
+          <h2>Публикация — 3 шага</h2>
+          <ol class="steps">
+            <li>Откройте <b>registry.js</b> в репозитории на GitHub, нажмите иконку карандаша («Edit this file»).</li>
+            <li>Выделите всё (Ctrl+A), удалите и вставьте скопированное содержимое (Ctrl+V).</li>
+            <li>«Commit changes» — через минуту сертификат виден на странице проверки.</li>
+          </ol>
+          <div class="small">Страница admin.html не входит в меню сайта и не видна посетителям: попасть на неё можно только по прямому адресу. Публикация идёт через ваш аккаунт GitHub — чужой доступ к содержимому реестра невозможен.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script>
+var NEXT_FMT = 'CA-{year}-';
+
+function pad(n, w) { n = String(n); while (n.length < w) n = '0' + n; return n; }
+
+function nextNum() {
+  var year = new Date().getFullYear();
+  var max = 0;
+  for (var i = 0; i < REGISTRY.length; i++) {
+    var m = /^CA-(\d{4})-(\d{6})$/.exec(REGISTRY[i].num);
+    if (m && Number(m[1]) === year && Number(m[2]) > max) max = Number(m[2]);
+  }
+  return 'CA-' + year + '-' + pad(max + 1, 6);
+}
+
+function fillRegistryTable() {
+  var t = document.getElementById('regtable');
+  // убрать строки, кроме шапки
+  while (t.rows.length > 1) t.deleteRow(1);
+  for (var i = 0; i < REGISTRY.length; i++) {
+    var r = t.insertRow(-1);
+    r.insertCell(0).textContent = REGISTRY[i].num;
+    r.insertCell(1).textContent = REGISTRY[i].name;
+    r.insertCell(2).textContent = REGISTRY[i].program;
+    r.insertCell(3).textContent = REGISTRY[i].date;
+    r.insertCell(4).textContent = REGISTRY[i].status;
+  }
+  document.getElementById('count').textContent = REGISTRY.length;
+}
+
+document.getElementById('f_num').value = nextNum();
+document.getElementById('f_date').value = new Date().toISOString().slice(0, 10);
+document.getElementById('f_prog').addEventListener('change', function() {
+  document.getElementById('f_prog_other').style.display = (this.value === 'other') ? 'block' : 'none';
+});
+fillRegistryTable();
+
+function msg(kind, text) {
+  var m = document.getElementById('msg');
+  m.className = 'msg ' + kind;
+  m.innerHTML = text;
+}
+
+function prepare() {
+  var num = document.getElementById('f_num').value.trim().toUpperCase().replace(/\s+/g, '');
+  var name = document.getElementById('f_name').value.trim().replace(/\s+/g, ' ');
+  var progSel = document.getElementById('f_prog').value;
+  var prog = (progSel === 'other') ? document.getElementById('f_prog_other').value.trim() : progSel;
+  var date = document.getElementById('f_date').value;
+  var status = document.getElementById('f_status').value;
+
+  if (!/^CA-\d{4}-\d{6}$/.test(num)) { msg('err', 'Номер должен быть в формате CA-2026-000000.'); return false; }
+  if (!name) { msg('err', 'Укажите ФИО владельца.'); return false; }
+  if (!prog) { msg('err', 'Укажите программу.'); return false; }
+  if (!date) { msg('err', 'Укажите дату выдачи.'); return false; }
+
+  for (var i = 0; i < REGISTRY.length; i++) {
+    if (REGISTRY[i].num.toUpperCase() === num) { msg('err', 'Номер ' + num + ' уже есть в реестре (' + REGISTRY[i].name + '). Проверьте поле номера.'); return false; }
+  }
+
+  var rec = { num: num, name: name, program: prog, date: date, status: status };
+  var all = REGISTRY.concat([rec]);
+
+  // текст файла
+  var lines = all.map(function(r) {
+    return '  { num: \'' + r.num + '\', name: \'' + r.name.replace(/'/g, "\\'") + '\', program: \'' + r.program.replace(/'/g, "\\'") + '\', date: \'' + r.date + '\', status: \'' + r.status + '\' }';
+  });
+  var out =
+    '// Реестр сертификатов ЦПК «Финансы и экономика»\n' +
+    '// Формат: номер | ФИО | программа | дата выдачи | статус (Действителен / Аннулирован)\n' +
+    '// Пополняется через admin.html → «Подготовить запись» → вставка сюда → Commit changes.\n\n' +
+    'const REGISTRY = [\n' + lines.join(',\n') + (lines.length ? ',' : '') + '\n];\n';
+
+  document.getElementById('out').textContent = out;
+  document.getElementById('outcard').style.display = 'block';
+
+  var pv = document.getElementById('preview');
+  pv.style.display = 'block';
+  pv.innerHTML = '<b>Как будет выглядеть на странице проверки:</b><br><br>' +
+    'Номер: <b>' + num + '</b><br>Владелец: ' + name + '<br>Программа: ' + prog +
+    '<br>Дата выдачи: ' + date + '<br>Статус: <b>' + status + '</b>';
+
+  msg('ok', 'Запись подготовлена. Скопируйте файл ниже и вставьте в registry.js на GitHub (шаги справа).');
+  return false;
+}
+
+function copyOut() {
+  var t = document.getElementById('out').textContent;
+  navigator.clipboard.writeText(t).then(function() {
+    var m = document.getElementById('copymsg');
+    m.className = 'msg ok';
+    m.textContent = 'Скопировано. Вставляйте в registry.js на GitHub.';
+  });
+}
+
+function downloadOut() {
+  var blob = new Blob([document.getElementById('out').textContent], { type: 'text/javascript' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'registry.js';
+  a.click();
+}
+</script>
+</body>
+</html>
